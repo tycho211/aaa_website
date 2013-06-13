@@ -22,6 +22,21 @@ end
 
 gem 'jquery-rails'
 
+# Added these after watching Udemy Ch3L5 video
+group :development do
+	gem 'sqlite3'
+	gem 'rspec-rails', '2.13.1', :require => 'rspec-rails'
+end
+
+group :test do
+	gem 'sqlite3'
+	gem 'rspec-rails', '2.13.1', :require => 'rspec-rails'
+end
+
+group :production do
+	gem 'pg'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
