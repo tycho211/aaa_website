@@ -6,7 +6,7 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # trying to push to heroku, commenting sqlite out
-# gem 'sqlite3', '1.3.7'
+gem 'sqlite3', '1.3.7'
 
 
 # Gems used only for assets and not required
@@ -39,6 +39,8 @@ end
 group :production do
 	gem 'pg'
 end
+
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
