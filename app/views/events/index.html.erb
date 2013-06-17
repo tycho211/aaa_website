@@ -1,15 +1,32 @@
-<h1>Listing events</h1>
+<article id="events">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <% @events.each do |event| %>
+    <section>
+    <h1><%= event.title %></h1>
+    <h2>Date of event: <%= event.date %></h2>
+    <p>
+      <%= event.description %>
+    </p>
+    <% if user_signed_in? %>
+      <p>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete%>
+      </p>
+    <% end %>
+  </section>
+<% end %>
 
+  <% if user_signed_in? %>
+    <section>
+      <%= link_to 'New Event', new_event_path %>
+    </section>
+  <% end %>
+
+</article>
+
+
+<!--
 <% @events.each do |event| %>
   <tr>
     <td><%= event.title %></td>
@@ -25,3 +42,4 @@
 <br />
 
 <%= link_to 'New Event', new_event_path %>
+-->
